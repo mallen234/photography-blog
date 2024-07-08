@@ -18,6 +18,8 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* overflow: hidden; */
+  width: 100vw;
 }
 
 a {
@@ -30,10 +32,13 @@ a:hover {
 }
 
 body {
-  margin: 0;
+  /* margin: 0; */
+
+  padding: none;
   display: flex;
   place-items: center;
-  min-width: 320px;
+  /* min-width: 320px; */
+  width: 100vw;
   min-height: 100vh;
   background-color: rgb(244, 243, 239);
 }
