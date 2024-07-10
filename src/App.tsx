@@ -1,7 +1,6 @@
 import "./App.css";
 import Image from "./components/Image";
 import Nav from "./components/Nav";
-import Title from "./components/Title";
 
 function App() {
   return (
