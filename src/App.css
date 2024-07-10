@@ -42,3 +42,10 @@
 .read-the-docs {
   color: #888;
 }
+
+.nav-header {
+  position: fixed;
+  width: calc(100% - 30px);
+  top: 15px;
+  left: 15px;
+}
