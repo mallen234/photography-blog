@@ -1,5 +1,16 @@
 import "../App.css";
-const Nav = () => {
+import { NavItem } from "../types/types";
+
+const Nav = ({ places }: { places: string[] }) => {
+  const itemPlaces = places.map((place) => ({
+    title: place,
+    link: `/${place}`,
+  }));
+  const itemsObj: NavItem[] = [
+    { title: "Everything", link: "/" },
+    ...itemPlaces,
+  ];
+
   return (
     <>
       <nav className="nav-header text-white">
@@ -36,9 +47,9 @@ const Nav = () => {
                   aria-hidden="true"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M4 6h16M4 12h16m-7 6h7"
                   />
                 </svg>
@@ -51,9 +62,9 @@ const Nav = () => {
                   aria-hidden="true"
                 >
                   <path
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
-                    stroke-width="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    strokeWidth="2"
                     d="M6 18L18 6M6 6l12 12"
                   />
                 </svg>
@@ -63,30 +74,15 @@ const Nav = () => {
             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
               <div className="hidden sm:block sm:ml-6">
                 <div className="flex space-x-4">
-                  <a
-                    href="#"
-                    className="text-white hover:text-white py-2 rounded-md text-sm font-medium"
-                  >
-                    Everything
-                  </a>
-                  <a
-                    href="#"
-                    className="text-white hover:text-white  py-2 rounded-md text-sm font-medium"
-                  >
-                    Iceland
-                  </a>
-                  <a
-                    href="#"
-                    className="text-white hover:text-white  py-2 rounded-md text-sm font-medium"
-                  >
-                    Manchester
-                  </a>
-                  <a
-                    href="#"
-                    className="text-white hover:text-white  py-2 rounded-md text-sm font-medium"
-                  >
-                    Film
-                  </a>
+                  {itemsObj.map((item) => (
+                    <a
+                      key={item.title}
+                      href={item.link}
+                      className="text-white hover:text-white py-2 rounded-md text-sm font-medium"
+                    >
+                      {item.title}
+                    </a>
+                  ))}
                 </div>
               </div>
             </div>
@@ -95,30 +91,15 @@ const Nav = () => {
 
         <div className="sm:hidden" id="mobile-menu">
           <div className="px-2 pt-2 pb-3 space-y-1">
-            <a
-              href="#"
-              className="text-white hover:text-white block  py-2 rounded-md text-base font-medium"
-            >
-              Home
-            </a>
-            <a
-              href="#"
-              className="text-white hover:text-white block  py-2 rounded-md text-base font-medium"
-            >
-              About
-            </a>
-            <a
-              href="#"
-              className="text-white hover:text-white block  py-2 rounded-md text-base font-medium"
-            >
-              Services
-            </a>
-            <a
-              href="#"
-              className="text-white hover:text-white block  py-2 rounded-md text-base font-medium"
-            >
-              Contact
-            </a>
+            {itemsObj.map((item) => (
+              <a
+                key={item.title}
+                href={item.link}
+                className="text-white hover:text-white block  py-2 rounded-md text-base font-medium"
+              >
+                {item.title}
+              </a>
+            ))}
           </div>
         </div>
       </nav>
