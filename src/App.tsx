@@ -4,7 +4,7 @@ import Nav from "./components/Nav";
 import { allPhotos, Photos } from "./images/photos";
 
 const App = ({ linkName, places }: { linkName: string; places: string[] }) => {
-  let photos: Photos[] = allPhotos.sort((a, b) => 0.5 - Math.random());
+  let photos: Photos[] = allPhotos.sort(() => 0.5 - Math.random());
   return (
     <>
       <Nav places={places} />
