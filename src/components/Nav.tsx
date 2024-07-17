@@ -12,21 +12,24 @@ const Nav = ({ places }: { places: string[] }) => {
     ...itemPlaces,
   ];
   const { scrollDir } = useDetectScroll();
-  console.log(scrollDir);
+  console.log(places);
   return (
     <>
       <nav className="nav-header text-white ">
-        <div className=" flex flex-row justify-start text-white pb-2">
+        <div className=" flex flex-row justify-start text-black pb-2">
           <ul className="flex flex-row justify-start gap-1">
             <li>
-              <button className=" pr-1 border-1 rounded-2xl p-1 border-customGreen  bg-transparent backdrop-blur">
+              <a className=" pr-1 border rounded-2xl p-1 border-customGreen  bg-transparent backdrop-blur hover:text-white">
                 About
-              </button>
+              </a>
             </li>
             <li>
-              <button className="p-1 border rounded-2xl border-customGreen bg-transparent backdrop-blur">
+              <a
+                className="p-1 border rounded-2xl border-customGreen bg-transparent backdrop-blur hover:text-white"
+                href="mailto::marcusallen23@hotmail.co.uk"
+              >
                 Contact
-              </button>
+              </a>
             </li>
           </ul>
         </div>
@@ -43,7 +46,7 @@ const Nav = ({ places }: { places: string[] }) => {
                     <a
                       key={item.title}
                       href={item.link}
-                      className="text-white hover:text-white py-2 rounded-md text-sm font-medium"
+                      className="text-customGreen hover:text-white py-2 rounded-md text-sm font-medium"
                     >
                       {item.title}
                     </a>
