@@ -26,7 +26,7 @@ const Nav = ({ places }: { places: string[] }) => {
             <li>
               <a
                 className="p-1 border rounded-2xl border-customGreen bg-transparent backdrop-blur hover:text-white"
-                href="mailto::marcusallen23@hotmail.co.uk"
+                href="mailto:marcusallen23@hotmail.co.uk"
               >
                 Contact
               </a>
