@@ -2,24 +2,24 @@ export interface Photos {
   url: string;
   name: string;
 }
-export const filmPhotosLondon: Photos[] = [
-  { url: "https://i.postimg.cc/8cqp2wQY/R1-09930-007-A.jpg", name: "London" },
-  { url: "https://i.postimg.cc/rybwRy09/R1-09930-010-A.jpg", name: "Cologne" },
-  { url: "https://i.postimg.cc/2SNjTHxb/R1-09930-021-A.jpg", name: "Cologne" },
-  { url: "https://i.postimg.cc/MGDGnyVc/R1-09930-030-A.jpg", name: "London" },
-  { url: "https://i.postimg.cc/T1y2NFSm/R1-09930-003-A.jpg", name: "Cologne" },
+
+const urlPrefix = "https://marcus-photo-bucket.s3.eu-west-2.amazonaws.com/_DSF";
+const urlSuffix = ".jpeg";
+const imgNums = [
+  1351, 1359, 1371, 1382, 1384, 1388, 1389, 1391, 1392, 1405, 1410, 1411, 1417,
+  1418, 1475, 1478, 1488, 1491, 1495, 1496, 1504, 1506,
 ];
 
-export const allPhotos: Photos[] = [
-  { url: "https://i.postimg.cc/wvQ4wknR/DSF1384.jpg", name: "Iceland" },
-  { url: "https://i.postimg.cc/L6xK9mCg/DSF1351.jpg", name: "Iceland" },
-  { url: "https://i.postimg.cc/CKDQq0NN/DSF1382.jpg", name: "Iceland" },
-  { url: "https://i.postimg.cc/1tG2LSVt/DSF1418.jpg", name: "Iceland" },
-  { url: "https://i.postimg.cc/gcMNrrpp/DSF1389.jpg", name: "Iceland" },
-  { url: "https://i.postimg.cc/7Pgqk8rS/DSF1504.jpg", name: "Iceland" },
-  { url: "https://i.postimg.cc/8cqp2wQY/R1-09930-007-A.jpg", name: "London" },
-  { url: "https://i.postimg.cc/rybwRy09/R1-09930-010-A.jpg", name: "Cologne" },
-  { url: "https://i.postimg.cc/2SNjTHxb/R1-09930-021-A.jpg", name: "Cologne" },
-  { url: "https://i.postimg.cc/MGDGnyVc/R1-09930-030-A.jpg", name: "London" },
-  { url: "https://i.postimg.cc/T1y2NFSm/R1-09930-003-A.jpg", name: "Cologne" },
+export const icelandPhotos = imgNums.map((img) => {
+  return { url: urlPrefix.concat(img.toString(), urlSuffix), name: "London" };
+});
+
+export const filmPhotosLondon: Photos[] = [
+  { url: `${urlPrefix}`, name: "London" },
+  { url: `${urlPrefix}`, name: "Cologne" },
+  { url: `${urlPrefix}`, name: "Cologne" },
+  { url: `${urlPrefix}`, name: "London" },
+  { url: `${urlPrefix}`, name: "Cologne" },
 ];
+
+export const allPhotos: Photos[] = icelandPhotos;
