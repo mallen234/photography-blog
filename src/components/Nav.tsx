@@ -7,10 +7,7 @@ const Nav = ({ places }: { places: string[] }) => {
     title: place,
     link: `/${place}`,
   }));
-  const itemsObj: NavItem[] = [
-    { title: "Everything", link: "/" },
-    ...itemPlaces,
-  ];
+  const itemsObj: NavItem[] = [...itemPlaces];
   const { scrollDir } = useDetectScroll();
   console.log(places);
   return (
@@ -18,14 +15,12 @@ const Nav = ({ places }: { places: string[] }) => {
       <nav className="nav-header text-white ">
         <div className=" flex flex-row justify-start text-black pb-2">
           <ul className="flex flex-row justify-start gap-1">
-            <li>
-              <a className=" pr-1 border rounded-2xl p-1 border-customGreen  bg-transparent backdrop-blur hover:text-white">
-                About
-              </a>
+            <li className=" pr-1 border rounded-2xl p-1 backdrop-blur border-customGreen">
+              <a className=" hover:text-white">About</a>
             </li>
-            <li>
+            <li className="pr-1 border rounded-2xl p-1 backdrop-blur border-customGreen">
               <a
-                className="p-1 border rounded-2xl border-customGreen bg-transparent backdrop-blur hover:text-white"
+                className="backdrop-blur hover:text-white"
                 href="mailto:marcusallen23@hotmail.co.uk"
               >
                 Contact
@@ -40,7 +35,7 @@ const Nav = ({ places }: { places: string[] }) => {
         >
           <div className="relative flex items-center justify-between h-16">
             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
-              <div className="hidden sm:block sm:ml-6">
+              <div className="sm:block sm:ml-6">
                 <div className="flex space-x-4">
                   {itemsObj.map((item) => (
                     <a

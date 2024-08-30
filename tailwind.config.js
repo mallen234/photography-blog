@@ -8,6 +8,8 @@ export default {
       },
       colors: {
         customGreen: "#00ff00",
+        customYellow: "#037882",
+        customBeige: "#F0E5E5",
       },
     },
   },
