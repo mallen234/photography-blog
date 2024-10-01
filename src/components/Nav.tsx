@@ -2,25 +2,37 @@ import "../App.css";
 import { NavItem } from "../types/types";
 import useDetectScroll from "@smakss/react-scroll-direction";
 
-const Nav = ({ places }: { places: string[] }) => {
+const Nav = ({
+  places,
+  setShowAbout,
+}: {
+  places: string[];
+  setShowAbout: React.Dispatch<React.SetStateAction<boolean>>;
+}) => {
   const itemPlaces = places.map((place) => ({
     title: place,
     link: `/${place}`,
   }));
   const itemsObj: NavItem[] = [...itemPlaces];
   const { scrollDir } = useDetectScroll();
-  console.log(places);
   return (
     <>
       <nav className="nav-header text-white ">
         <div className=" flex flex-row justify-start text-black pb-2">
           <ul className="flex flex-row justify-start gap-1">
             <li className=" pr-1 border rounded-2xl p-1 backdrop-blur border-customGreen">
-              <a className=" hover:text-white">About</a>
+              <button
+                onClick={() => {
+                  setShowAbout((val) => !val);
+                }}
+                className=" font-medium no-underline hover:text-white bg-transparent p-0 outline-none"
+              >
+                About
+              </button>
             </li>
-            <li className="pr-1 border rounded-2xl p-1 backdrop-blur border-customGreen">
+            <li className="pr-1 border rounded-2xl p-1 backdrop-blur border-customGreen ">
               <a
-                className="backdrop-blur hover:text-white"
+                className="backdrop-blur hover:text-white text-black"
                 href="mailto:marcusallen23@hotmail.co.uk"
               >
                 Contact

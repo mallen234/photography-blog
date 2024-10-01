@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Stint+Ultra+Expanded&display=swap");
+/* @import url("https://fonts.googleapis.com/css2?family=Stint+Ultra+Expanded&display=swap"); */
 
 @tailwind base;
 @tailwind components;
@@ -58,13 +58,7 @@ button {
   background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+  outline: none;
 }
 
 @media (prefers-color-scheme: light) {

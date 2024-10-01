@@ -42,15 +42,22 @@ const penxtaxImgNums = [
 const londonPhotos: Photos[] = penxtaxImgNums.map((penxtaxImgNum) => {
   return {
     url: `https://marcus-photo-bucket.s3.eu-west-2.amazonaws.com/R1-09930-0${penxtaxImgNum}A.JPG`,
-    name: "London",
+    name: "Mar_23",
   };
 });
 
-// const pentaxPhotos = "https://marcus-photo-bucket.s3.eu-west-2.amazonaws.com/R1-09930-0"
-// const suffix =
+const augPhotos24Nums = Array.from({ length: 31 }, (_, index) => index + 1);
+const augPhotos24: Photos[] = augPhotos24Nums
+  .filter((v) => v != 27)
+  .map((num) => {
+    return {
+      url: `https://marcus-photo-bucket.s3.eu-west-2.amazonaws.com/august_24/aug_24_${num}.jpg`,
+      name: "Aug_24",
+    };
+  });
 
 export const icelandPhotos = harryImgNums.map((img) => {
-  return { url: urlPrefix.concat(img.toString(), urlSuffix), name: "Iceland" };
+  return { url: urlPrefix.concat(img.toString(), urlSuffix), name: "Sep_23" };
 });
 
 export const filmPhotosLondon: Photos[] = [
@@ -61,4 +68,6 @@ export const filmPhotosLondon: Photos[] = [
   { url: `${urlPrefix}`, name: "Cologne" },
 ];
 
-export const allPhotos: Photos[] = icelandPhotos.concat(londonPhotos);
+export const allPhotos: Photos[] = icelandPhotos
+  .concat(londonPhotos)
+  .concat(augPhotos24);
