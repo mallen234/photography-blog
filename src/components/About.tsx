@@ -3,7 +3,6 @@ const About = ({
 }: {
   setShowAbout: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const cross = "&#10005";
   return (
     <div className="fixed inset-0 flex items-center justify-center ">
       <div className=" pr-1 border rounded-2xl p-1 backdrop-blur border-customGreen w-1/2">
