@@ -4,7 +4,7 @@ import App from "./App.tsx";
 import "./index.css";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-const places = ["Sep_23", "Mar_23", "Aug_24"];
+const places = ["Sep_23", "Mar_23", "Aug_24", "Jan_25"];
 const routes = places.map((place) => ({
   path: place,
   element: <App linkName={place} places={places} />,
