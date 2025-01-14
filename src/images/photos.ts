@@ -56,6 +56,14 @@ const augPhotos24: Photos[] = augPhotos24Nums
     };
   });
 
+const janPhotos25Nums = Array.from({ length: 30 }, (_, index) => index + 1);
+const janPhotos25: Photos[] = janPhotos25Nums.map((num) => {
+  return {
+    url: `https://marcus-photo-bucket.s3.eu-west-2.amazonaws.com/january_25/jan_25_${num}.jpg`,
+    name: "Jan_25",
+  };
+});
+
 export const icelandPhotos = harryImgNums.map((img) => {
   return { url: urlPrefix.concat(img.toString(), urlSuffix), name: "Sep_23" };
 });
@@ -70,4 +78,5 @@ export const filmPhotosLondon: Photos[] = [
 
 export const allPhotos: Photos[] = icelandPhotos
   .concat(londonPhotos)
-  .concat(augPhotos24);
+  .concat(augPhotos24)
+  .concat(janPhotos25);
