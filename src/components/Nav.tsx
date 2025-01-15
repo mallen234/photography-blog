@@ -1,19 +1,12 @@
 import "../App.css";
-import { NavItem } from "../types/types";
+import { navItems } from "../const";
 import useDetectScroll from "@smakss/react-scroll-direction";
 
 const Nav = ({
-  places,
   setShowAbout,
 }: {
-  places: string[];
   setShowAbout: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-  const itemPlaces = places.map((place) => ({
-    title: place,
-    link: `/${place}`,
-  }));
-  const itemsObj: NavItem[] = [...itemPlaces];
   const { scrollDir } = useDetectScroll();
   return (
     <>
@@ -49,7 +42,7 @@ const Nav = ({
             <div className="flex-1 flex items-center justify-center sm:items-stretch sm:justify-start">
               <div className="sm:block sm:ml-6">
                 <div className="flex space-x-4">
-                  {itemsObj.map((item) => (
+                  {navItems.map((item) => (
                     <a
                       key={item.title}
                       href={item.link}
