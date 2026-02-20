@@ -5,4 +5,5 @@ export const navItems: NavItem[] = [
   { title: "Mar '23", link: "/Mar_23" },
   { title: "Aug '24", link: "/Aug_24" },
   { title: "Jan '25", link: "/Jan_25" },
+  { title: "Feb '26", link: "/Feb_26" },
 ];

@@ -1,1 +1,1 @@
-i=1; for file in *; do mv "$file" "jan_24_$((i++)).${file##*.}"; done
+i=1; for file in *; do mv "$file" "feb_26_$((i++)).${file##*.}"; done
