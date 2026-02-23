@@ -1,1 +1,9 @@
-i=1; for file in *; do mv "$file" "feb_26_$((i++)).${file##*.}"; done
+dir="$1"
+prefix="$2"
+
+i=1
+for file in "$dir"/*; do
+  [ -f "$file" ] || continue
+  ext="${file##*.}"
+  mv "$file" "$dir/${prefix}_$((i++)).$ext"
+done
